@@ -13,7 +13,7 @@ resource "aws_instance" "myec2" {
                 sudo usermod -aG docker $USER
                 newgrp docker
                 chmod 777 /var/run/docker.sock
-                docker run -d --rm --name jenkins     -p 8080:8080 -p 50000:50000     ijacob10/jenkinspipeline:version1
+                docker run -d --rm --name jenkins     -p 8080:8080 -p 50000:50000     lforlinux/jenkinspipeline:version1
                 sudo yum install java-1.8.0-openjdk -y 
                 sudo yum install python3
                 EOF
