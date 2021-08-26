@@ -72,7 +72,7 @@ Ssh-add
 Ssh ec2-user@browserip
 Docker ps    -> Jenkins
              -> Java -version
-             -> Python 
+             -> Python .
 
 
 
