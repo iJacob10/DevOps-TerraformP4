@@ -1,11 +1,24 @@
 Instruction to deploy the stack 
 
-* clone this repo 
+* clone this repo
+* yum install git 
+* git init
+* git clone https://github.com/iJacob10/DevOps-TerraformP4.git
 * install terraform binary on the instance
 * use ```terrafrom init && terraform plan && terraform apply```
 
 
 ## How to use your own keys? 
+The public_key is your own instance corresponding key pair of the private key, If you do not have one already please follow the steps and use it on the terraform configuration file. 
+
+
+```
+# ssh-keygen (Press enter to use your default location)
+# Do not set up any key phrase leave it empty 
+# cat ~/.ssh/id_rsa.pub (copy this public key and paste it on the main.tf public_key section)
+```
+
+## This terraform written to use Jenkins instance directly without need of configuring anything, So after apply grab the public ip and use ip:8080 to access the Jenkins
 
 As per the code block in our terraform 
 
@@ -17,13 +30,3 @@ resource "aws_key_pair" "keypair" {
 }
 
 ```
-The public_key is your own instance corresponding key pair of the private key, If you do not have one already please follow the steps and use it on the terraform configuration file. 
-
-
-```
-# ssh-keygen (Press enter to use your default location)
-# Do not set up any key phrase leave it empty 
-# cat ~/.ssh/id_rsa.pub (copy this public key and paste it on the main.tf public_key section)
-```
-
-## This terraform written to use Jenkins instance directly without need of configuring anything, So after apply grab the public ip and use ip:8080 to access the Jenkins
